@@ -232,6 +232,7 @@ def rename_username():
 
 @app.route("/api/credentials/verify", methods=["POST"])
 def check_credentials():
+    "Verifies the provided username and password against stored credentials and returns a JSON response indicating whether the verification was successful."
     body = request.get_json(silent=True) or {}
     username = body.get("username", "")
     password = body.get("password", "")
