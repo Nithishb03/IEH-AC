@@ -242,6 +242,7 @@ def check_credentials():
 
 @app.route("/api/credentials/status", methods=["GET"])
 def credentials_status():
+    "Retrieves and returns the current credential status in JSON format, including whether credentials have been set and the stored username."
     return jsonify({
         "isSet": has_credentials_set(),
         "username": get_username(),  # not secret, safe to expose
