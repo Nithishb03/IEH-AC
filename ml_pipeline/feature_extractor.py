@@ -146,6 +146,7 @@ def extract_features(events):
     out["move_speed_std"] = _std(speeds, _mean(speeds))
 
     def count_of(t):
+        "Counts the number of events in the events collection that match the specified event type."
         return sum(1 for e in events if e["type"] == t)
 
     out["count_move"] = len(moves)
