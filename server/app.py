@@ -199,6 +199,7 @@ def recovery_key_status():
 
 @app.route("/api/credentials", methods=["POST"])
 def save_credentials():
+    "Saves or updates login credentials after verifying the current password if credentials have already been set. Extracts the username, password, and current password from the request JSON body, stores the credentials, and returns a JSON response indicating success or failure."
     body = request.get_json(silent=True) or {}
     username = body.get("username", "")
     password = body.get("password", "")
