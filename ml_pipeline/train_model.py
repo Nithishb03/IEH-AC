@@ -56,6 +56,7 @@ def band_of(trust):
 
 
 def band_labels(band):
+    "Returns a tuple of descriptive labels (prediction and risk level) associated with a given policy band."
     labels = {
         "FULL": ("GENUINE USER", "LOW"),
         "STEPUP": ("LIKELY GENUINE", "MEDIUM"),
