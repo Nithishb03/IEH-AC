@@ -62,6 +62,7 @@ def process_file(path):
 
 
 def scan_dir(dir_path, source_label, label_value):
+    "Scans a directory for parquet files, processes each file, tags accepted sessions with source and label metadata, and aggregates the resulting feature rows along with rejection counts and total file count."
     dir_path = Path(dir_path)
     files = sorted(dir_path.glob("*.parquet"))
     rows, rejects = [], {}
