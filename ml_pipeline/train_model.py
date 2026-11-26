@@ -130,6 +130,7 @@ def train(genuine_df, negative_df, out_dir, random_state=RANDOM_STATE):
     cm = confusion_matrix(y_actual, y_pred, labels=[1, 0]).tolist()  # rows/cols: [genuine, negative]
 
     def band_counts(trust_arr):
+        "Counts the occurrences of each policy band (\"FULL\", \"STEPUP\", \"RESTRICT\", and \"LOCK\") within an array of trust scores and returns the counts as a dictionary."
         bands = [band_of(t) for t in trust_arr]
         return {b: bands.count(b) for b in ["FULL", "STEPUP", "RESTRICT", "LOCK"]}
 
@@ -195,6 +196,7 @@ def predict_one(model, scaler, calibration, feature_dict):
 
 
 def main():
+    "Parses command-line arguments for genuine and negative dataset paths and output directory, loads the datasets from parquet files, trains the model using the training function, prints the resulting statistics as JSON, and outputs the location of the saved artifacts."
     ap = argparse.ArgumentParser()
     ap.add_argument("--genuine", required=True)
     ap.add_argument("--negative", required=True)
