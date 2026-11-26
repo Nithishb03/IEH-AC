@@ -81,6 +81,7 @@ def scan_dir(dir_path, source_label, label_value):
 
 
 def print_summary(name, total, kept, rejects):
+    "Prints a formatted summary of session processing results including total files found, number of kept sessions, number of dropped sessions, and breakdown of drop reasons."
     print(f"\n[{name}]")
     print(f"  found:   {total}")
     print(f"  kept:    {kept}")
