@@ -185,6 +185,7 @@ def check_recovery_key():
 
 @app.route("/api/recovery-key/status", methods=["GET"])
 def recovery_key_status():
+    "Returns a JSON response indicating whether a recovery key has been set."
     return jsonify({"isSet": has_recovery_key_set()})
 
 
