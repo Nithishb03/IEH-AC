@@ -122,6 +122,7 @@ def reset():
 
 @app.route("/predict", methods=["POST"])
 def predict():
+    "Extracts features from the incoming JSON request body, computes raw and smoothed trust scores using the loaded model, determines the corresponding security band, prediction, confidence, risk, and anomaly score, and returns these metrics as a JSON response."
     body = request.get_json(silent=True) or {}
     feats = body.get("features")
     if not isinstance(feats, dict):
