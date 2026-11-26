@@ -76,6 +76,7 @@ def trust_from_score(score, low_anchor, high_anchor):
 
 
 def train(genuine_df, negative_df, out_dir, random_state=RANDOM_STATE):
+    "Trains an IsolationForest model and RobustScaler using genuine training data, calibrates trust scores based on negative and genuine data, evaluates performance, and persists the resulting artifacts and statistics to an output directory."
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
