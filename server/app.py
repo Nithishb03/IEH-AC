@@ -90,6 +90,7 @@ def smooth(raw_trust):
 
 
 def score_features(feature_dict):
+    "Extracts and validates feature values from a dictionary, scales them using the global scaler, evaluates the model to calculate a raw decision score, and converts it into a calibrated raw trust value. Returns the raw score and raw trust."
     missing = [k for k in FEATURE_KEYS if k not in feature_dict]
     if missing:
         raise ValueError(f"missing features: {missing}")
