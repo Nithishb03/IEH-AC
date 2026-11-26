@@ -81,6 +81,7 @@ _state = {"ema_trust": None}
 
 
 def smooth(raw_trust):
+    "Applies an exponential moving average (EMA) to a raw trust value using the global smoothing state and smoothing alpha, updating the stored EMA trust value and returning it."
     if _state["ema_trust"] is None:
         _state["ema_trust"] = raw_trust
     else:
