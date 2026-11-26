@@ -176,6 +176,7 @@ def save_recovery_key():
 
 @app.route("/api/recovery-key/verify", methods=["POST"])
 def check_recovery_key():
+    "Verifies an attempted recovery key by extracting the key from the request JSON body, checking it against the stored recovery key, and returning a JSON response indicating whether the verification was successful."
     body = request.get_json(silent=True) or {}
     key = body.get("key", "")
     ok = verify_recovery_key(key)
