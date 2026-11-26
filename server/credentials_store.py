@@ -119,6 +119,7 @@ def verify_credentials(username: str, attempt: str) -> bool:
 
 
 def get_username() -> str | None:
+    "Retrieves the stored username from the credentials database if it exists, or returns None if no credentials record is found."
     conn = _get_conn()
     try:
         row = conn.execute("SELECT username FROM credentials WHERE id = 1").fetchone()
