@@ -217,6 +217,7 @@ def save_credentials():
 
 @app.route("/api/credentials/username", methods=["POST"])
 def rename_username():
+    "Updates the stored username after verifying the current password if credentials are already set. Returns a JSON response containing an error message and a 403 or 400 HTTP status code upon authentication or validation failure, or a success status dictionary otherwise."
     body = request.get_json(silent=True) or {}
     username = body.get("username", "")
     current_password = body.get("currentPassword", "")
