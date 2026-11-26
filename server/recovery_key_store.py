@@ -92,6 +92,7 @@ def verify_recovery_key(attempt: str) -> bool:
 
 
 def has_recovery_key_set() -> bool:
+    "Checks whether a recovery key has been configured in the database by querying for the existence of the recovery key record. Returns a boolean indicating whether the record is present."
     conn = _get_conn()
     try:
         row = conn.execute("SELECT 1 FROM recovery_key WHERE id = 1").fetchone()
