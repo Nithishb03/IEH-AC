@@ -40,6 +40,7 @@ plt.rcParams.update({"font.size": 11, "axes.edgecolor": "#444444", "axes.linewid
 
 
 def main():
+    "Parses command-line arguments to load a saved machine learning model, scaler, and calibration parameters, processes genuine and negative test datasets using the same train/test split configuration as training, computes evaluation metrics including ROC curve and trust score distributions, and generates and saves three evaluation figures along with printing performance summaries."
     ap = argparse.ArgumentParser()
     ap.add_argument("--genuine", required=True)
     ap.add_argument("--negative", required=True)
