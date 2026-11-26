@@ -67,6 +67,7 @@ def band_labels(band):
 
 
 def trust_from_score(score, low_anchor, high_anchor):
+    "Converts a model decision score into a 0-100 scale trust value based on low and high anchors."
     span = high_anchor - low_anchor
     if span <= 0:
         return np.zeros_like(score) if hasattr(score, "__len__") else 0.0
