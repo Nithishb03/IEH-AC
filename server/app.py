@@ -115,6 +115,7 @@ def health():
 
 @app.route("/reset", methods=["POST"])
 def reset():
+    "Clears the global smoothing state by resetting the exponential moving average trust value to None and returns a JSON response indicating the reset was successful."
     _state["ema_trust"] = None
     return jsonify({"reset": True})
 
