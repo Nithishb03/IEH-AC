@@ -48,6 +48,7 @@ OPERATING_TRUST_CUT = 60   # matches the frontend's Step-up/Restricted boundary
 
 
 def band_of(trust):
+    "Determines and returns the policy band string (\"FULL\", \"STEPUP\", \"RESTRICT\", or \"LOCK\") corresponding to a given trust score."
     if trust >= 80: return "FULL"
     if trust >= 60: return "STEPUP"
     if trust >= 40: return "RESTRICT"
