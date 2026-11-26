@@ -176,6 +176,7 @@ def extract_from_event_json(path):
 
 
 def main():
+    "Parses command line arguments to locate a session file, extracts behavioural features from either JSON or Parquet formats, and prints the resulting feature dictionary as a JSON string."
     ap = argparse.ArgumentParser(description="Extract 37 behavioural features from a raw session.")
     ap.add_argument("path", help="raw .parquet session file, or .json list of raw events")
     args = ap.parse_args()
