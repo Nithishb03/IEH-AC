@@ -103,6 +103,7 @@ def score_features(feature_dict):
 
 @app.route("/health", methods=["GET"])
 def health():
+    "Returns a JSON response containing the application health status, model load state, genuine training set size, ROC AUC score, and smoothing alpha."
     return jsonify({
         "status": "ok",
         "model_loaded": MODEL is not None,
