@@ -46,6 +46,7 @@ def compare(a, b):
 
 
 def main():
+    "Parses command line arguments to load raw events and an optional reference feature JSON, extracts features from the raw events, compares them against the reference features if provided, prints the comparison results or extracted features, and exits with a non-zero status code if mismatches are found."
     ap = argparse.ArgumentParser()
     ap.add_argument("--events", help="raw events JSON (list of {timestamp,event,x,y})")
     ap.add_argument("--reference", help="reference feature JSON to compare against "
