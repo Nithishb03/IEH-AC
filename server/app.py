@@ -159,6 +159,7 @@ def predict():
 
 @app.route("/api/recovery-key", methods=["POST"])
 def save_recovery_key():
+    "Saves or overwrites the owner recovery key after verifying the current recovery key if one has already been set, returning a JSON response containing an error message and a 403 status code if verification fails, a 400 status code for validation errors, a 500 status code for unexpected exceptions, or a success status upon completion."
     body = request.get_json(silent=True) or {}
     key = body.get("key", "")
     current_key = body.get("currentKey", "")
