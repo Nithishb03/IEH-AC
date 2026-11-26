@@ -129,6 +129,7 @@ def get_username() -> str | None:
 
 
 def has_credentials_set() -> bool:
+    "Checks whether a credentials record exists in the database and returns a boolean indicating whether credentials have been set."
     conn = _get_conn()
     try:
         row = conn.execute("SELECT 1 FROM credentials WHERE id = 1").fetchone()
