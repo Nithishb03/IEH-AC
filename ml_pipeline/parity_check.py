@@ -34,6 +34,7 @@ TOL = 1e-6
 
 
 def compare(a, b):
+    "Compares feature values between two dictionaries feature by feature using a defined tolerance, returning a list of comparison rows and a list of mismatching feature keys."
     rows, mism = [], []
     for k in FEATURE_KEYS:
         av, bv = float(a.get(k, 0)), float(b.get(k, 0))
