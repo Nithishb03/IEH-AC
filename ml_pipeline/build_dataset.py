@@ -91,6 +91,7 @@ def print_summary(name, total, kept, rejects):
 
 
 def main():
+    "Parses command-line arguments to locate genuine and/or negative session directories, processes and combines the session data, orders the resulting feature table columns, and writes the output to a parquet file while printing a processing summary."
     ap = argparse.ArgumentParser()
     ap.add_argument("--genuine-dir", help="folder of YOUR raw session .parquet files")
     ap.add_argument("--negative-dir", help="folder of impostor/hard-negative raw session .parquet files")
