@@ -37,6 +37,7 @@ FEATURE_KEYS = [
 
 
 def empty_features():
+    "Creates and returns a dictionary initializing all canonical feature keys with a value of zero."
     return {k: 0 for k in FEATURE_KEYS}
 
 
