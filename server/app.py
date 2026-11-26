@@ -250,6 +250,7 @@ def credentials_status():
 
 
 def main():
+    "Starts the Flask web application server bound to 127.0.0.1 on port 5000 with debugging disabled."
     app.run(host="127.0.0.1", port=5000, debug=False)
 
 
